@@ -1,12 +1,12 @@
 {
-    "name": "benhawker/pipedrive",
+    "name": "dzentota/pipedrive",
     "type": "library",
     "version": "0.1.1",
     "description": "API client library for the Pipedrive CRM",
     "keywords": ["crm", "api"],
     "homepage": "",
     "license": "MIT",
-    "authors": [{"name": "TTRide Group Devs", "email": "ben@tickettoridegroup.com", "homepage": "http://tickettoridegroup.com", "role": "Developer"}],
+    "authors": [{"name":"Alex Tatulchenkov"},{"name": "TTRide Group Devs", "email": "ben@tickettoridegroup.com", "homepage": "http://tickettoridegroup.com", "role": "Developer"}],
     "require": {
         "php": ">=5.3.0"
     },
