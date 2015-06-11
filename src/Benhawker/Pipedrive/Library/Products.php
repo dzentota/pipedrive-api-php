@@ -41,5 +41,44 @@ class Products
         $params = array('term' => $name);
         return $this->curl->get('products/find', $params);
     }
+    
+    /**
+     * Updates a product
+     *
+     * @param  int   $productId pipedrives product Id
+     * @param  array $data     new details of product
+     * @return array returns detials of a product
+     */
+    public function update($productId, array $data = array())
+    {
+        return $this->curl->put('products/' . $productId, $data);
+    }
 
+    /**
+     * Adds a product
+     *
+     * @param  array $data products details
+     * @return array returns details of a product
+     * @throws PipedriveMissingFieldError
+     */
+    public function add(array $data)
+    {
+        //if there is no name set throw error as it is a required field
+        if (!isset($data['name'])) {
+            throw new PipedriveMissingFieldError('You must include a "name" field when inserting a person');
+        }
+
+        return $this->curl->post('products', $data);
+    }
+
+    /**
+     * Deletes a product
+     *
+     * @param  int   $productId pipedrives product Id
+     * @return array returns details of a product
+     */
+    public function delete($productId)
+    {
+        return $this->curl->delete('products/' . $productId);
+    }
 }
